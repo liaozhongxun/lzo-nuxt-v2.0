@@ -5,9 +5,5 @@
 <script>
 export default {
   name: "Login",
-  validate({query,params}){
-      console.log(query,params);
-      return true
-  }
 };
 </script>
