@@ -58,6 +58,11 @@ export default {
     destroyed() {
         console.log("13、客户端 destroyed");
     },
+    head(){
+        return {
+            title: '页面独有 head 属性设置',
+        }
+    },
     methods: {
         upCount() {
             this.count++;
