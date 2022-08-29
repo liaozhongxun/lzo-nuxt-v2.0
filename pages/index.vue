@@ -85,4 +85,8 @@ export default {
         },
     },
 };
+
+
+// 通过插件映入elementui
 </script>
+
