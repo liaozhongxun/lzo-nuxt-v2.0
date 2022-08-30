@@ -1,5 +1,6 @@
 export const state = {
-    token: ""
+    token: "",
+    statedata:"statedata"
 }
 
 export const mutations = {
@@ -19,3 +20,9 @@ export const actions = {
         store.state.token = this.$cookies.get("token");
     }
 }
+
+
+/**
+ *  重构的话直接将 new Vuex.Store({}) 当做函数返回值 export 出去就可以了
+ * 
+ */

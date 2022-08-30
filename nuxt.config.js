@@ -62,5 +62,6 @@ export default {
   },
   router: { // 定义全局路由中间件
       middleware: "auth"
-  }
+  },
+  loading: false
 }

@@ -10,7 +10,7 @@
         <button @click="goLink('/list')">JS query 跳转页面</button>
         <button @click="goLinkParams('list')">JS params 跳转页面</button>
         <button @click="goLink('/news')">新闻</button>
-        <button @click="getUserInfo">获取用户信息</button>
+        <button @click="getUserInfo">获取用户信息 {{ userName }}</button>
         <!-- <Tutorial /> -->
         <!-- <Tutorial /> -->
     </div>
@@ -21,6 +21,7 @@ export default {
     name: "IndexPage",
     data() {
         return {
+            userName:"",
             count: 0,
         };
     },
@@ -82,13 +83,14 @@ export default {
                 },
             });
         },
-        getUserInfo(){
+        getUserInfo() {
             this.$axios({
-                url:"/api/users/userinfo",
-                method:"get",
-            }).then((res)=>{
-                console.log(res,'userinfo')
-            })
+                url: "/api/users/userinfo",
+                method: "get",
+            }).then((res) => {
+                console.log(res, "userinfo");
+                this.userName = res.result.us;
+            });
         },
     },
 };
