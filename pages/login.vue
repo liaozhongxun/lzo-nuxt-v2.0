@@ -4,6 +4,7 @@
         <input type="text" v-model="userNameSingUp" />
         <input type="text" v-model="passWordSingUp" />
         <button @click="SingUp">注册</button>
+        <!-- <el-button type="primary" size='mini'>主要按钮</el-button> -->
         <br />
         <div class="singin">登录</div>
         <input type="text" v-model="userName" />
@@ -51,7 +52,7 @@ export default {
             }).then((res) => {
                 console.log(res,"登录成功")
                 this.setToken(res.result.token);
-                // console.log(this.$router.push("/"))
+                console.log(this.$router.push("/"))
             });
         },
     },

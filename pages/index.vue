@@ -10,6 +10,7 @@
         <button @click="goLink('/list')">JS query 跳转页面</button>
         <button @click="goLinkParams('list')">JS params 跳转页面</button>
         <button @click="goLink('/news')">新闻</button>
+        <button @click="getUserInfo">获取用户信息</button>
         <!-- <Tutorial /> -->
         <!-- <Tutorial /> -->
     </div>
@@ -59,10 +60,10 @@ export default {
     destroyed() {
         console.log("13、客户端 destroyed");
     },
-    head(){
+    head() {
         return {
-            title: '页面独有 head 属性设置',
-        }
+            title: "页面独有 head 属性设置",
+        };
     },
     methods: {
         upCount() {
@@ -70,7 +71,7 @@ export default {
         },
         goLink(path) {
             this.$router.push({
-                path: path
+                path: path,
             });
         },
         goLinkParams(path) {
@@ -81,11 +82,17 @@ export default {
                 },
             });
         },
+        getUserInfo(){
+            this.$axios({
+                url:"/api/users/userinfo",
+                method:"get",
+            }).then((res)=>{
+                console.log(res,'userinfo')
+            })
+        },
     },
 };
-
 
 // 通过插件映入elementui
 // 研究一下传token名称的地方
 </script>
-
