@@ -9,6 +9,7 @@
         >
         <button @click="goLink('/list')">JS query 跳转页面</button>
         <button @click="goLinkParams('list')">JS params 跳转页面</button>
+        <button @click="goLink('/news')">新闻</button>
         <!-- <Tutorial /> -->
         <!-- <Tutorial /> -->
     </div>
@@ -69,10 +70,7 @@ export default {
         },
         goLink(path) {
             this.$router.push({
-                path: path,
-                query: {
-                    id: 1,
-                },
+                path: path
             });
         },
         goLinkParams(path) {
@@ -88,5 +86,6 @@ export default {
 
 
 // 通过插件映入elementui
+// 研究一下传token名称的地方
 </script>
 
