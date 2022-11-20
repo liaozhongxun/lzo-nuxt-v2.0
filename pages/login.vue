@@ -34,7 +34,7 @@ export default {
     },
     methods: {
         // ...mapMutations(["setToken"]),
-        ...mapMutations({
+        ...mapMutations({  // 也可以直接通过$store commit 他
             setToken: "setToken",
             moduleFunc: "modulesfile/func"
         }),
