@@ -24,5 +24,5 @@ export const actions = {
 
 /**
  *  重构的话直接将 new Vuex.Store({}) 当做函数返回值 export 出去就可以了
- * 
+ *
  */
